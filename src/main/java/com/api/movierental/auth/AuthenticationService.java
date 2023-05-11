@@ -143,14 +143,12 @@ public class AuthenticationService {
                             .build();
                     new ObjectMapper().writeValue(response.getOutputStream(), authResponse);
                 }
+            } catch (TokenExpiredException e) {
+                throw new TokenExpiredException("Refresh token expired.");
+            } catch (InvalidTokenException e) {
+                throw new InvalidTokenException("Invalid refresh token.");
             } catch (Exception e) {
-                if (e instanceof TokenExpiredException) {
-                    throw new TokenExpiredException("Refresh token expired.");
-                } else if (e instanceof InvalidTokenException) {
-                    throw new InvalidTokenException("Invalid refresh token.");
-                } else {
-                    throw new TokenExpiredException("Unexpected error occurred while refreshing token.");
-                }
+                throw new TokenExpiredException("Unexpected error occurred while refreshing token.");
             }
         }
     }
