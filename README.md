@@ -42,7 +42,7 @@ spring.datasource.password=db_password
 
 ## API Documentation
 
-API documentation can be found in the `docs` folder.
+API documentation can be found in the [docs](https://github.com/GabrielHenriqueCA/movie-rental-api/blob/main/docs) folder.
 
 ## Future Work
 
@@ -50,9 +50,8 @@ In the future, I plan to use this API in a front-end framework to create a full-
 
 ## Contributing
 
-Contributions are welcome! Please see the `CONTRIBUTING.md` file for more information.
+Contributions are welcome! Please see the [CONTRIBUTING](https://github.com/GabrielHenriqueCA/movie-rental-api/blob/main/CONTRIBUTING.md) file for more information.
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for more information.
-Installation
+This project is licensed under the Apache License. See the [LICENSE](https://github.com/GabrielHenriqueCA/movie-rental-api/blob/main/LICENSE) file for more information.
