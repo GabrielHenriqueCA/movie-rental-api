@@ -9,7 +9,8 @@ import com.api.movierental.models.MovieModel;
 import com.api.movierental.repositories.MovieRepository;
 import com.api.movierental.services.IMovieService;
 import jakarta.validation.Valid;
-import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
@@ -20,9 +21,11 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 import java.util.UUID;
 
-@Slf4j
+
 @Service
 public class MovieServiceImpl implements IMovieService {
+
+    private static final Logger log = LogManager.getLogger(MovieServiceImpl.class);
 
     private final MovieRepository movieRepository;
     private final MovieConverter movieConverter;
