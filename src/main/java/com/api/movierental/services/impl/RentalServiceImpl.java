@@ -9,7 +9,8 @@ import com.api.movierental.models.RentalModel;
 import com.api.movierental.repositories.RentalRepository;
 import com.api.movierental.services.IRentalService;
 import jakarta.validation.Valid;
-import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -20,10 +21,11 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
-@Slf4j
+
 @Service
 public class RentalServiceImpl implements IRentalService {
 
+    private static final Logger log = LogManager.getLogger(RentalServiceImpl.class);
 
     private final RentalRepository rentalRepository;
     private final RentalConverter rentalConverter;

@@ -18,7 +18,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @RequiredArgsConstructor
 public class ApplicationConfiguration {
 
-    CustomerRepository repository;
+    private final CustomerRepository repository;
 
     @Bean
     public ModelMapper modelMapper() {
@@ -33,7 +33,7 @@ public class ApplicationConfiguration {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return username -> repository.findByEmail(username)
+        return username -> repository.findCustomerByName(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
     }
 

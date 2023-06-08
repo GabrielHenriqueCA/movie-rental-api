@@ -9,7 +9,8 @@ import com.api.movierental.models.CustomerModel;
 import com.api.movierental.repositories.CustomerRepository;
 import com.api.movierental.services.ICustomerService;
 import jakarta.validation.Valid;
-import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -20,10 +21,10 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
-@Slf4j
 @Service
 public class CustomerServiceImpl implements ICustomerService {
 
+    private static final Logger log = LogManager.getLogger(CustomerServiceImpl.class);
     private final CustomerRepository customerRepository;
     private final CustomerConverter customerConverter;
 

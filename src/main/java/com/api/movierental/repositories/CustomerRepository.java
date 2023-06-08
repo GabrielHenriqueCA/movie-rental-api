@@ -4,17 +4,17 @@ import com.api.movierental.models.CustomerModel;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-@Component
 public interface CustomerRepository extends JpaRepository<CustomerModel, UUID> {
 
     Page<CustomerModel> findCustomerByNameContainingIgnoreCase(String name, Pageable pageable);
+
+    Optional<CustomerModel> findCustomerByName(String name);
 
     Optional<CustomerModel> findCustomerByCpf(String cpf);
 

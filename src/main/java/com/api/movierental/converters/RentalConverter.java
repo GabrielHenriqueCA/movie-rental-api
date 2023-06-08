@@ -8,7 +8,8 @@ import com.api.movierental.models.RentalModel;
 import com.api.movierental.repositories.CustomerRepository;
 import com.api.movierental.repositories.MovieRepository;
 import com.api.movierental.repositories.RentalRepository;
-import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
@@ -19,8 +20,9 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component
-@Slf4j
 public class RentalConverter {
+
+    private static final Logger log = LogManager.getLogger(RentalConverter.class);
     private final ModelMapper modelMapper;
 
     private final RentalRepository rentalRepository;
